@@ -78,3 +78,5 @@ end
 gem "httparty", "~> 0.20.0"
 
 gem "pagy", "~> 5.7"
+
+gem "rubocop", "~> 1.24", require: false
