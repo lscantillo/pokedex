@@ -1,0 +1,64 @@
+<div class="overflow-x-auto">
+  <table class="table w-full">
+    <thead>
+    <tr>
+      <th>
+        <label>
+          <input type="checkbox" class="checkbox">
+        </label>
+      </th>
+      <th>Pokemon</th>
+      <th>Type</th>
+      <th>Abilyties</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @pokemons.each do |pokemon| %>
+    <tr>
+      <th>
+        <label>
+          <input type="checkbox" class="checkbox">
+        </label>
+      </th>
+      <td>
+        <div class="flex items-center space-x-3">
+          <div class="avatar">
+            <div class="w-12 h-12 mask mask-squircle">
+              <%= image_tag pokemon.image_url %>
+            </div>
+          </div>
+          <div>
+            <div class="font-bold">
+              <%= pokemon.name %>
+            </div>
+            <div class="text-sm opacity-50">
+              ID: <%= pokemon.pokemon_id %>
+            </div>
+          </div>
+        </div>
+      </td>
+      <td>
+        <%= pokemon.pokemon_type %>
+
+        <br>
+        <span class="badge badge-outline badge-sm">Desktop Support Technician</span>
+      </td>
+      <td>Purple</td>
+      <th>
+        <%= button_to 'Details', pokemon_path(id: pokemon.id), method: :get ,class:'btn btn-ghost btn-xs' %>
+      </th>
+    </tr>
+    <% end %>
+    </tbody>
+    <tfoot>
+    <tr>
+      <th></th>
+      <th>Pokemon</th>
+      <th>Type</th>
+      <th>Abilyties</th>
+      <th></th>
+    </tr>
+    </tfoot>
+  </table>
+</div>

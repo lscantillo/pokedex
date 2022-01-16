@@ -1,0 +1,7 @@
+<div>
+  <%= button_to 'Back', root_path,method: :get,class:'btn btn-primary'  %>
+  <h3 class="mb-5 text-5xl font-bold" >All Pokemons</h3>
+  <%= render 'poketable',pokemons: @pokemons %>
+  <%== pagy_nav(@pagy) %>
+  <%== pagy_info(@pagy, item_name: 'Pokemon'.pluralize(@pagy.count))%>
+</div>
